@@ -66,8 +66,23 @@
         </thead>
         <tbody>
             <?php 
-              foreach($hotels as $info=>$valore)
+              foreach($hotels as $hotel){
+                echo " <tr>";
+                    foreach($hotel as $info=> $valore){
+                           if($info == 'parking'){
+                            if($valore== true){
+                                $valore='Si';
+                            }else{
+                                $valore='No';
+                            }
+                           }
+                           echo "<td>" . $valore . "</td>";
+                    }
+                echo "</tr>";
+              }
+            
             ?>
+
         </tbody>
     </table>
 
